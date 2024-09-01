@@ -3,11 +3,13 @@ import { Exercise } from '../../Schema/workout';
 import { addExercise as addExerciseToDB } from '../../Scripts/firestore';
 import Input from "../CommonComponents/Input";
 import SelectInput from "../CommonComponents/SelectInput";
-import { muscleOptions } from "../../Constants/options";
+import { buttonType, muscleOptions } from "../../Constants/options";
 import { errorMessages } from "../../Constants/error";
 import ErrorMessage from "../CommonComponents/ErrorMessage";
 import { successMessage } from "../../Constants/success";
 import SuccessMessage from "../CommonComponents/SuccessMessage";
+import { text } from "../../Constants/text";
+import Button from "../CommonComponents/Button";
 
 
 //Add a user entered exercise to the database 
@@ -74,13 +76,11 @@ const AddExercise = () => {
                 label="Targeted Muscles"
                 stylesContainer="mb-5"
             />
-
-            <button
+            <Button
+                style={buttonType.GREEN}
                 onClick={addExercise}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5"
-            >
-                Submit
-            </button>
+                text={text.SUBMIT}
+            />
             {err && <ErrorMessage message={err} />}
             {success && <SuccessMessage message={success} />}
         </div>

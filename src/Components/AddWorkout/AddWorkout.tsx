@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { addWorkout as addWorkoutDB } from "../../Scripts/firestore";
 import { Exercise, Workout, WorkoutDay } from '../../Schema/workout';
 import WorkoutDays from "../WorkoutDays/WorkoutDays";
-import { workoutDayCardType } from '../../Constants/options';
+import { buttonType, workoutDayCardType } from '../../Constants/options';
 import { useWorkout, WorkoutProvider } from "../../Contexts/WorkoutContext";
 import Input from "../CommonComponents/Input";
 import { text } from "../../Constants/text";
@@ -12,6 +12,7 @@ import { successMessage } from "../../Constants/success";
 import ErrorMessage from "../CommonComponents/ErrorMessage";
 import AddDay from "../AddDay/AddDay";
 import SuccessMessage from "../CommonComponents/SuccessMessage";
+import Button from "../CommonComponents/Button";
 
 const AddWorkoutComponent = () => {
     const {
@@ -71,42 +72,39 @@ const AddWorkoutComponent = () => {
                 label={text.NAME}
                 stylesContainer="mb-5"
             />
-            <button
-                onClick={() => setIsModalOpen(true)} // Open the modal on button click
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline m-5"
-            >
-                {text.ADD_DAYS}
-            </button>
+            <Button
+                style={buttonType.BLUE}
+                onClick={() => setIsModalOpen(true)}
+                text={text.ADD_DAYS}
+            />
             <ListValues
                 values={workout.days}
                 title={text.DAYS}
                 remove={removeDayFromWorkout}
             />
-            <button
+            <Button
+                style={buttonType.GREEN}
                 onClick={addWorkout}
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline m-5"
-            >
-                {text.SUBMIT}
-            </button>
+                text={text.SUBMIT}
+            />
             {success && <SuccessMessage message={success} />}
             {err && <ErrorMessage message={err} />}
 
             {isModalOpen && (
-                <div 
-                    onClick={closeModal} 
+                <div
+                    onClick={closeModal}
                     className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
                 >
-                    <div 
+                    <div
                         onClick={(e) => e.stopPropagation()} // Prevent the modal from closing when clicking inside
                         className="bg-white p-8 rounded shadow-lg w-11/12 h-5/6 max-w-screen-lg max-h-screen overflow-auto"
                     >
                         <AddDay />
-                        <button
-                            onClick={() => setIsModalOpen(false)} // Close the modal on button click
-                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
-                        >
-                            {text.EXIT}
-                        </button>
+                        <Button
+                            style={buttonType.RED}
+                            onClick={() => setIsModalOpen(false)}
+                            text={text.EXIT}
+                        />
                     </div>
                 </div>
             )}

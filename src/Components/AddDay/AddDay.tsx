@@ -3,9 +3,10 @@ import { text } from "../../Constants/text";
 import { Day, WorkoutDay } from "../../Schema/workout";
 import { useWorkout } from "../../Contexts/WorkoutContext";
 import Input from "../CommonComponents/Input";
-import { workoutDayCardType } from "../../Constants/options";
+import { buttonType, workoutDayCardType } from "../../Constants/options";
 import WorkoutDays from "../WorkoutDays/WorkoutDays";
 import WorkoutDayCard from "../WorkoutDays/WorkoutDayCard";
+import Button from "../CommonComponents/Button";
 
 const AddDays = () => {
     const {
@@ -37,7 +38,7 @@ const AddDays = () => {
         }
 
         addDayToWorkout(day);
-        
+
     }
 
     return (
@@ -70,20 +71,16 @@ const AddDays = () => {
             )}
 
             <div className="flex justify-between w-full mt-6">
-                <button
+                <Button
+                    style={buttonType.ORANGE}
                     onClick={clearWorkoutDays}
-                    className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
-
-                >
-                    {text.CLEAR}
-                </button>
-                <button
+                    text={text.CLEAR}
+                />
+                <Button
+                    style={buttonType.GREEN}
                     onClick={addDay}
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
-
-                >
-                    {text.ADD_DAY}
-                </button>
+                    text={text.ADD_DAY}
+                />
             </div>
 
 

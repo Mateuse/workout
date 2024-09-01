@@ -22,5 +22,9 @@ export const text = {
     CLOSE: "Close",
     EXIT: "Exit",
     CLEAR: "Clear",
-    REST_DAY: "Rest Day"
+    REST_DAY: "Rest Day",
+    CALENDAR: "Calendar",
+    ADD_EXERCISES: "Add Exercises",
+    ADD_WORKOUT_DAYS: "Add Workout Days",
+    ADD_WORKOUTS: "Add WorkoutS"
 }

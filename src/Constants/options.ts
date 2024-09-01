@@ -29,3 +29,11 @@ export const workoutDayCardType = {
     NORMAL: "normal",
     ADD: "add"
 }
+
+export const buttonType = {
+    GREEN: 'green',
+    BLUE: 'blue',
+    RED: 'red',
+    ORANGE: 'orange',
+    GREY: 'gray'
+}

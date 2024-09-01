@@ -6,11 +6,12 @@ import ErrorMessage from "../CommonComponents/ErrorMessage";
 import { successMessage } from "../../Constants/success";
 import SuccessMessage from "../CommonComponents/SuccessMessage";
 import Exercises from '../Exercises/Exercises';
-import { exerciseCardType } from '../../Constants/options';
+import { buttonType, exerciseCardType } from '../../Constants/options';
 import { useWorkoutDay, WorkoutDayProvider } from '../../Contexts/WorkoutDayContext';
 import { addWorkoutDayDB } from '../../Scripts/firestore';
 import ListValues from '../CommonComponents/ListValues';
 import { text } from '../../Constants/text';
+import Button from '../CommonComponents/Button';
 
 
 //Add a workout day
@@ -40,12 +41,12 @@ const AddWorkoutDayComponent = () => {
             setSuccess(successMessage.ADD_WORKOUT_DAY + workoutDay.name);
             setErr(null);
             resetWorkoutDay();
-        } catch(error) {
+        } catch (error) {
             setErr(errorMessages.GENERAL_ERROR);
             setSuccess(null);
             return errorMessages.GENERAL_ERROR;
         }
-        
+
     }
 
     return (
@@ -56,18 +57,17 @@ const AddWorkoutDayComponent = () => {
                 label={text.NAME}
                 stylesContainer="mb-5"
             />
-            <ListValues 
-                values={workoutDay.exercises} 
+            <ListValues
+                values={workoutDay.exercises}
                 title={text.EXERCISES}
                 remove={removeExerciseFromWorkoutDay}
             />
             <Exercises type={exerciseCardType.ADD} />
-            <button
+            <Button
+                style={buttonType.BLUE}
                 onClick={addWorkoutDay}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5"
-            >
-                {text.SUBMIT}
-            </button>
+                text={text.SUBMIT}
+            />
             {err && <ErrorMessage message={err} />}
             {success && <SuccessMessage message={success} />}
         </div>
