@@ -26,5 +26,6 @@ export const text = {
     CALENDAR: "Calendar",
     ADD_EXERCISES: "Add Exercises",
     ADD_WORKOUT_DAYS: "Add Workout Days",
-    ADD_WORKOUTS: "Add WorkoutS"
+    ADD_WORKOUTS: "Add Workouts",
+    SELECT_ACTIVE_WORKOUT: "Select Active Workout"
 }

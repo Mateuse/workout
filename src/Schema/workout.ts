@@ -20,7 +20,7 @@ export interface Workout {
 }
 
 export interface Day {
-    name?: string;
+    name: string;
     workoutDay: WorkoutDay | null;
     isRestDay: boolean;
 }

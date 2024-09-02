@@ -1,5 +1,7 @@
 import React from "react";
 import Label from "./Label";
+import ErrorMessage from "./ErrorMessage";
+import { text } from '../../Constants/text';
 
 interface InputProps {
     value: string | undefined;
@@ -8,9 +10,10 @@ interface InputProps {
     stylesContainer?: string;
     stylesLabel?: string;
     stylesInput?: string;
+    error?: string | null;
 }
 
-const Input: React.FC<InputProps> = ({ value, setValue, label, stylesContainer, stylesLabel, stylesInput }) => {
+const Input: React.FC<InputProps> = ({ value, setValue, label, stylesContainer, stylesLabel, stylesInput, error }) => {
 
     return (
         <div className={`${stylesContainer} flex flex-col w-1/4`}>
@@ -22,6 +25,12 @@ const Input: React.FC<InputProps> = ({ value, setValue, label, stylesContainer, 
                 placeholder={label}
                 onChange={(e) => setValue(e.target.value)}
             />
+            {error && (
+                <ErrorMessage 
+                    message={error} 
+                    styles="mt-5"
+                />
+            )}
         </div>
     )
 }

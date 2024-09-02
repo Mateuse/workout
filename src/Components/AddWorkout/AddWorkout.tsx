@@ -99,7 +99,7 @@ const AddWorkoutComponent = () => {
                         onClick={(e) => e.stopPropagation()} // Prevent the modal from closing when clicking inside
                         className="bg-white p-8 rounded shadow-lg w-11/12 h-5/6 max-w-screen-lg max-h-screen overflow-auto"
                     >
-                        <AddDay />
+                        <AddDay closeModal={setIsModalOpen}/>
                         <Button
                             style={buttonType.RED}
                             onClick={() => setIsModalOpen(false)}

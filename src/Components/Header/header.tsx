@@ -18,6 +18,11 @@ const Header: React.FC<HeaderProps> = ({ setPage }) => {
                 />
                 <Button
                     style={buttonType.GREEN}
+                    onClick={() => setPage(text.SELECT_ACTIVE_WORKOUT)}
+                    text={text.SELECT_ACTIVE_WORKOUT}
+                />
+                <Button
+                    style={buttonType.GREEN}
                     onClick={() => setPage(text.ADD_WORKOUTS)}
                     text={text.ADD_WORKOUTS}
                 />
