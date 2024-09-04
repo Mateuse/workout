@@ -27,5 +27,13 @@ export const text = {
     ADD_EXERCISES: "Add Exercises",
     ADD_WORKOUT_DAYS: "Add Workout Days",
     ADD_WORKOUTS: "Add Workouts",
-    SELECT_ACTIVE_WORKOUT: "Select Active Workout"
+    SELECT_ACTIVE_WORKOUT: "Select Active Workout",
+    USERNAME: "Username",
+    PASSWORD: "Password",
+    DONT_HAVE_ACCOUNT: "Don't have an account?",
+    HAVE_ACCOUNT: "Already have an account?",
+    SIGNIN_HERE: "Sign in Here",
+    REGISTER_HERE: "Register Here",
+    LOGIN: "Login",
+    REGISTER: "Register",
 }

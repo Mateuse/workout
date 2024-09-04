@@ -3,7 +3,7 @@ import React from "react";
 const SelectActiveWorkout = () => {
     return (
         <div>
-            SElect Active Workout
+            Select Active Workout
         </div>
     )
 }

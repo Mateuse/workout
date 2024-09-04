@@ -21,8 +21,6 @@ const AddWorkoutDayComponent = () => {
     const [err, setErr] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
 
-
-
     const addWorkoutDay = async () => {
         if (workoutDay.name === "") {
             setErr(errorMessages.INVALID_NAME_ERROR);

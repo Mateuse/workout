@@ -32,3 +32,18 @@ export interface Exercise {
     video?: string;
     targetedMuscles: string[];
 }
+
+export interface CalendarDay {
+    workoutDay: WorkoutDay;
+    workout: Workout;
+    date: Date;
+    exerciseEntry: ExerciseEntry[];
+}
+
+export interface ExerciseEntry {
+    exercise: Exercise;
+    completedSets: number;
+    completedReps: number[];
+    completedWeight: number[];
+}
+

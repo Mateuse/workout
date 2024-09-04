@@ -6,5 +6,6 @@ export const errorMessages = {
     NO_EXERCISE_WORKOUT_DAY: "Please add an exercise to the workout day",
     NO_WORKOUT_DAY_WORKOUT: "Please add at least one workout day to the workout",
     NO_DAYS_WORKOUT: "Please add at least one day to the workout",
-    NO_WORKOUT_IN_DAY: "Please add a workout or rest day to the workout day"
+    NO_WORKOUT_IN_DAY: "Please add a workout or rest day to the workout day",
+    DUPLICATE_USER: "This username already exists"
 }
